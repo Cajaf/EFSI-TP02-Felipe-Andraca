@@ -9,6 +9,7 @@ let secretNumber = Math.floor(Math.random() * 100)
 let attempts = 0
 const intentosAteriores = [];
 
+
 button.addEventListener("click", checkGuess)
 resetBtn.addEventListener("click", reiniciar)
 input.addEventListener("keydown", function(event) {
@@ -27,7 +28,8 @@ function checkGuess(){
     message2.innerText = intentosAteriores
     attemptsText.innerText = attempts;
     input.value = "";
-
+    
+    message.classList.add("show");
     if(guess == secretNumber){
       message.innerText = "¡Ganaste!"
     }
@@ -47,6 +49,7 @@ function checkGuess(){
 }else{
 message.innerText = `perdiste el numero era ${secretNumber}`
 }
+
 }
 
 function reiniciar(){
@@ -56,4 +59,5 @@ intentosAteriores.length = 0;
 attemptsText.innerText = attempts;
 message.innerText = ""
 message2.innerText = intentosAteriores
+message.classList.remove("show"); 
 }
