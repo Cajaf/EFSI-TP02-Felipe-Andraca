@@ -20,7 +20,7 @@ input.addEventListener("keydown", function(event) {
 function checkGuess(){
   const guess = input.value
   if(attempts < 10){
-  if(guess >=0 && guess <= 100)
+  if(guess >=0 && guess <= 100 && guess != "")
   {
     attempts += 1;
     intentosAteriores.push(guess)
